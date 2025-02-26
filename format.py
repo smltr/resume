@@ -178,7 +178,7 @@ def wrap_text_with_border(
                 wrapped_lines.append(subsequent_indent + part)
 
     # Format with border
-    formatted_lines = format_with_border(wrapped_lines, width, padding, margin, input_file)
+    formatted_lines = format_with_border(wrapped_lines, width, padding, margin, output_file)
 
     # Write to output file
     try:
@@ -189,7 +189,7 @@ def wrap_text_with_border(
         print(f"Error writing output file: {e}")
 
 
-def format_with_border(lines: List[str], width: int, padding: int, margin: int, input_file: str = "resume.txt") -> List[str]:
+def format_with_border(lines: List[str], width: int, padding: int, margin: int, filename: str = "resume.txt") -> List[str]:
     """
     Add border design to the wrapped text.
 
@@ -204,17 +204,17 @@ def format_with_border(lines: List[str], width: int, padding: int, margin: int, 
         List of lines with border design
     """
     # Extract filename for the header
-    filename = input_file.split('/')[-1]
+    filename = filename.split('/')[-1]
 
     # Calculate adjusted width (total width minus margin)
     adjusted_width = width - (margin * 2)
 
     # Create header with filename and utf-8 indicator
-    header_text = f"── {filename} "
+    header_text = f"── [{filename}] "
     # Calculate correct fill length to ensure alignment with exact width
-    remaining_width = adjusted_width - len(header_text) - 12  # 12 = "┌" + " utf-8 ───┐"
+    remaining_width = adjusted_width - len(header_text) - 14  # 12 = "┌" + " utf-8 ───┐"
     header_fill = '─' * remaining_width
-    header = f"┌{header_text}{header_fill} utf-8 ───┐"
+    header = f"┌{header_text}{header_fill} [utf-8] ───┐"
 
     bottom_border = f"└{'─' * (adjusted_width - 2)}┘"
 
@@ -239,7 +239,7 @@ def format_with_border(lines: List[str], width: int, padding: int, margin: int, 
         result.append(margin_spaces + formatted_line)
 
     # Add bottom border (no additional empty line at the end)
-    result.append(margin_spaces + bottom_border)
+    result.append(margin_spaces + bottom_border + "\n")
 
     return result
 
