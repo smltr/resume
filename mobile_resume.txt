@@ -1,0 +1,23 @@
+ ┌── [mobile_resume.txt] ────────────── [utf-8] ───┐
+ │                                                 │
+ │ YOUR NAME                                       │
+ │ Full Stack Software Engineer                    │
+ │                                                 │
+ │                                                 │
+ │ —— Experience ————————————————————————————————— │
+ │                                                 │
+ │ → Independent Developer ······················· │
+ │   Apr 2023 - Present (2 years)                  │
+ │                                                 │
+ │     Self-funded exploration into agentic AI and │
+ │     personal projects                           │
+ │                                                 │
+ │     • Built custom blog (Elixir, Phoenix,       │
+ │       LiveView)                                 │
+ │     • Tinkered with personal Lisp dialect       │
+ │     • Created Counter-Strike server browser     │
+ │       (findservers.net)                         │
+ │     • Refined personal LLM workflow for coding  │
+ │       and creative work                         │
+ │                                                 │
+ └───────────────────── [Generated: 2025-02-27] ───┘
